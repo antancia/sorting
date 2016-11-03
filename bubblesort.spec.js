@@ -22,10 +22,10 @@ describe('Bubble Sort', function(){
   })
 
   it('throws an error if there are strings in the array', function() {
-  	// var notNum = [{}, NaN, 'string', func(){}];
+  
 
-  	expect(bubbleSort(["apple"]).toThrowError("That is not a number!"));
-  	expect(bubbleSort([{}]).toThrowError("That is not a number!"));
+  	expect(function() {bubbleSort(["apple"])}).toThrow(new Error ("That is not a number!"));
+  	expect(function() {bubbleSort([{}])}).toThrow(new Error("That is not a number!"));
   
   }) 
   it('makes sure the parameter is an array', function() {
@@ -33,7 +33,7 @@ describe('Bubble Sort', function(){
   	// 	throw new TypeError("give us something else...an array, maybe");
   	// }
 
-  	expect(bubbleSort("apple").toThrowError("give us something else...an array, maybe"));
+  	expect(function() {bubbleSort("apple")}).toThrow(new Error("no thank you"));
   
   })
 
